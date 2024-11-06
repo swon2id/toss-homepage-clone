@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Toss Product Sans", sans-serif;
+  background-color: var(--adaptiveBackground);
+  overflow-x: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  font-family: "Toss Product Sans", sans-serif;
+  text-decoration: none;
+}
