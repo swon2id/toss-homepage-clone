@@ -719,6 +719,7 @@ main > section:nth-child(7) {
 
   overflow: hidden;
 
+  background-image: url('../images/section7-banner.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
