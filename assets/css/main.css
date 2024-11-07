@@ -562,6 +562,10 @@ main > section:nth-child(5) > div {
   margin-bottom: 30px;
 }
 
+.credit-contents__sub-div02 > div p {
+  transform: translateY(-2px);
+}
+
 .credit-contents__sub-div02 p:nth-child(2) {
   margin-bottom: 10px;
 
@@ -715,7 +719,6 @@ main > section:nth-child(7) {
 
   overflow: hidden;
 
-  background-image: url("../images/section7-banner.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -875,7 +878,7 @@ main > section:nth-child(8) > div {
   width: 100%;
 
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.5;
   color: #333d4b;
 }
@@ -917,9 +920,11 @@ main > section:nth-child(8) > div {
   color: #b0b8c1;
 }
 
-.gallery-contents__item:nth-child(5) > div > div:last-child p {
+.gallery-contents__item:nth-child(5) > div > div:last-child {
   flex: 1;
+}
 
+.gallery-contents__item:nth-child(5) > div > div:last-child p {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.5;
