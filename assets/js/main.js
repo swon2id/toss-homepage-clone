@@ -1,6 +1,6 @@
-import HeaderHandler from "/assets/js/HeaderHandler.js";
-import MainBannerHandler from "/assets/js/MainBannerHandler.js";
-import CurtainAnimationHandler from "/assets/js/CurtainAnimationHandler.js";
+import HeaderHandler from "assets/js/HeaderHandler.js";
+import MainBannerHandler from "assets/js/MainBannerHandler.js";
+import CurtainAnimationHandler from "assets/js/CurtainAnimationHandler.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   new HeaderHandler();
