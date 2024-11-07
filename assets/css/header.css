@@ -72,9 +72,17 @@ header nav {
 }
 .header__menu__item a {
   padding: 12px 10px;
+
   font-size: 15px;
   color: #4e5968;
+
+  border-radius: 8px;
 }
+
+.header__menu__item a:hover {
+  background-color: rgba(2, 32, 71, 0.05);
+}
+
 .header__menu ul > div {
   display: flex;
   align-items: center;
