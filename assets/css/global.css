@@ -7,7 +7,6 @@
 html,
 body {
   font-family: "Toss Product Sans", sans-serif;
-  background-color: var(--adaptiveBackground);
   overflow-x: none;
 }
 
