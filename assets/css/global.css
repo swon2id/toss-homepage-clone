@@ -16,6 +16,10 @@ ul {
   list-style: none;
 }
 
+p {
+  word-break: keep-all;
+}
+
 a {
   font-family: "Toss Product Sans", sans-serif;
   text-decoration: none;
