@@ -40,13 +40,6 @@ footer {
   color: #6b7684;
 }
 
-.footer__site-group-list a:active,
-.footer__term-container a:active,
-.footer__site-group-list a:hover,
-.footer__term-container a:hover {
-  text-decoration: underline;
-}
-
 .footer__address {
   font-size: 13px;
   line-height: 20px;
@@ -115,12 +108,17 @@ footer {
   transition: opacity 0.2s ease;
 }
 
-.footer__sns-list-item > a:active,
-.footer__sns-list-item > a:hover {
-  opacity: 1;
-}
-
 .footer__sns-list-item a img {
   width: 100%;
   height: 100%;
+}
+
+footer a:active,
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer__sns-list-item > a:active,
+.footer__sns-list-item > a:hover {
+  opacity: 1;
 }
