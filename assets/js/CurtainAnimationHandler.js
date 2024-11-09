@@ -18,8 +18,8 @@ class CurtainAnimationHandler {
     const windowHeight = window.innerHeight;
     const windowBottom = window.scrollY + windowHeight;
 
-    const startPoint = sectionTop + 0.25 * sectionHeight;
-    const endPoint = sectionTop + sectionHeight + 0.25 * sectionHeight;
+    const startPoint = sectionTop + 0.32 * sectionHeight;
+    const endPoint = sectionTop + sectionHeight + 0.32 * sectionHeight;
 
     let progress = (windowBottom - startPoint) / (endPoint - startPoint);
     progress = Math.max(0, Math.min(progress, 1));

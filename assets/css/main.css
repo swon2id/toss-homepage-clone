@@ -1142,11 +1142,6 @@ main > section:nth-child(10) > div:last-child > div a:hover {
 
 @media (min-width: 640px) {
   /* 1번째 섹션 스타일 */
-  .main-banner__contents h1:not(h1.main-banner__mobile-slogun),
-  .main-banner__desc p:not(p.main-banner__mobile-desc) {
-    display: block;
-  }
-
   h1.main-banner__mobile-slogun,
   p.main-banner__mobile-desc {
     display: none;
@@ -1157,30 +1152,41 @@ main > section:nth-child(10) > div:last-child > div a:hover {
     height: 740.531px;
   }
 
-  .loan-contents__sub-div03
-    > p:nth-child(3):not(.loan-contents__sub-div03__mobile-text)
-    ~ p:not(.loan-contents__sub-div03__mobile-text) {
-    display: block;
-  }
-
   .loan-contents__sub-div03__mobile-text {
     display: none;
   }
 
   /* 5번째 섹션 스타일 */
-  .credit-contents__sub-div01 h2:not(.credit-contents__sub-div01__mobile-text) {
-    display: block;
-  }
 
   .credit-contents__sub-div01__mobile-text {
     display: none;
   }
 
-  .credit-contents__sub-div02:not(.credit-contents__sub-div02--mobile) {
-    display: flex;
+  .credit-contents__sub-div02--mobile {
+    display: none;
   }
 
-  .credit-contents__sub-div02--mobile {
+  /* 6번째 섹션 스타일 */
+  .invest-contents__title p {
+    display: none;
+  }
+
+  .invest-sub-section03 p.invest-sub-section03__mobile-text {
+    display: none;
+  }
+
+  /* 7번째 섹션 스타일 */
+  main > section:nth-child(7) > span:not(:first-child) {
+    display: none;
+  }
+
+  .gallery-contents__item:nth-child(5) > div > div:last-child p:nth-child(4),
+  .gallery-contents__item:nth-child(5) > div > div:last-child p:nth-child(5) {
+    display: none;
+  }
+
+  /* 9번째 섹션 스타일 */
+  .payment-section-contents__mobile {
     display: none;
   }
 }
@@ -1506,5 +1512,333 @@ main > section:nth-child(10) > div:last-child > div a:hover {
 
   .credit-contents__sub-div02--mobile p:nth-child(2) ~ p {
     font-size: 15px;
+  }
+
+  /* 6번째 섹션 스타일 */
+  main > section:nth-child(6) {
+    padding: 100px 0;
+  }
+
+  .invest-contents__title h1 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+  }
+
+  .invest-contents__title h2 {
+    font-size: 28px;
+  }
+
+  .invest-contents__title h2:nth-child(3) {
+    margin-bottom: 20px;
+  }
+
+  .invest-contents__title p {
+    display: block;
+
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #333d4b;
+  }
+
+  .invest-sub-section02 > div:nth-child(1) ~ div {
+    display: none;
+  }
+
+  .invest-sub-section02 > div:first-child {
+    width: 100%;
+    max-width: 375px;
+    height: auto;
+  }
+
+  .invest-sub-section03 p:not(.invest-sub-section03__mobile-text) {
+    display: none;
+  }
+
+  .invest-sub-section03 p.invest-sub-section03__mobile-text {
+    display: block;
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgb(78, 89, 104);
+  }
+
+  /* 7번째 섹션 스타일 */
+  main > section:nth-child(7) {
+    flex-direction: column;
+
+    height: 665px;
+
+    background-image: url("../images/section7-mobile-banner.png");
+    background-size: contain;
+  }
+
+  main > section:nth-child(7) > span {
+    font-size: 55px;
+    text-shadow: 0px 1px 20px rgba(0, 0, 0, 0.45);
+  }
+
+  main > section:nth-child(7) > span:first-child {
+    display: none;
+  }
+
+  main > section:nth-child(7) > span:not(:first-child) {
+    display: inline;
+  }
+
+  .section07-cover--left {
+    display: none;
+  }
+
+  .section07-cover--right {
+    display: none;
+  }
+
+  /* 8번째 섹션 스타일 */
+  main > section:nth-child(8) > div {
+    padding: 100px 0;
+  }
+
+  .gallery-contents > h1 {
+    font-size: 36px;
+  }
+
+  .gallery-contents > h1:nth-child(2) {
+    margin-bottom: 64px;
+  }
+
+  .gallery-contents__item:nth-child(3) {
+    margin-bottom: 100px;
+  }
+
+  .gallery-contents__item:nth-child(3) img {
+    margin-bottom: 30px;
+  }
+
+  .gallery-contents__item:nth-child(3) h2 {
+    margin-bottom: 3px;
+  }
+
+  .gallery-contents__item:nth-child(3) h2,
+  .gallery-contents__item:nth-child(3) h3 {
+    font-size: 26px;
+  }
+
+  .gallery-contents__item:nth-child(3) h3 {
+    margin-bottom: 20px;
+  }
+
+  .gallery-contents__item:nth-child(3) p {
+    font-size: 18px;
+  }
+
+  .gallery-contents__item:nth-child(4) {
+    flex-direction: column;
+
+    margin-bottom: 100px;
+  }
+
+  .gallery-contents__item:nth-child(4) > div:first-child {
+    flex: 1;
+
+    margin-right: 0;
+  }
+
+  .gallery-contents__item:nth-child(4) > div:first-child img {
+    max-width: 240px;
+
+    margin-bottom: 30px;
+  }
+
+  .gallery-contents__item:nth-child(4) > div:first-child h2,
+  .gallery-contents__item:nth-child(4) > div:first-child h3 {
+    font-size: 26px;
+  }
+
+  .gallery-contents__item:nth-child(4) > div:last-child {
+    align-self: flex-end;
+
+    max-width: 240px;
+
+    margin-top: 50px;
+  }
+
+  .gallery-contents__item:nth-child(4) > div:last-child img {
+    margin-bottom: 30px;
+  }
+
+  .gallery-contents__item:nth-child(4) > div:last-child p {
+    font-size: 18px;
+  }
+
+  .gallery-contents__item:nth-child(5) img {
+    margin-bottom: 30px;
+  }
+
+  .gallery-contents__item:nth-child(5) > div {
+    flex-direction: column;
+  }
+
+  .gallery-contents__item:nth-child(5) > div > div:first-child {
+    margin-bottom: 30px;
+  }
+
+  .gallery-contents__item:nth-child(5) > div > div:first-child h2,
+  .gallery-contents__item:nth-child(5) > div > div:first-child h3 {
+    margin-bottom: 0;
+
+    font-size: 26px;
+  }
+
+  .gallery-contents__item:nth-child(5) > div > div:last-child p:nth-child(1),
+  .gallery-contents__item:nth-child(5) > div > div:last-child p:nth-child(2),
+  .gallery-contents__item:nth-child(5) > div > div:last-child p:nth-child(3) {
+    display: none;
+  }
+
+  .gallery-contents__item:nth-child(5) > div > div:last-child p:nth-child(4),
+  .gallery-contents__item:nth-child(5) > div > div:last-child p:nth-child(5) {
+    display: block;
+  }
+
+  .gallery-contents__item:nth-child(5) > div > div:last-child p {
+    font-size: 18px;
+  }
+
+  /* 9번째 섹션 스타일 */
+  main > section:nth-child(9) > div {
+    padding: 100px 0;
+  }
+
+  .payment-section-contents {
+    height: 100%;
+  }
+
+  .payment-section-contents > h1 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+  }
+
+  .payment-section-contents > h2 {
+    font-size: 28px;
+  }
+
+  .payment-section-contents > h2:nth-child(3) {
+    margin-bottom: 10px;
+  }
+
+  .payment-section-contents__mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .payment-section-contents > div:not(.payment-section-contents__mobile) {
+    display: none;
+  }
+
+  .payment-section-contents__mobile > div {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 32px;
+  }
+
+  .payment-section-contents__mobile > div > div:first-child {
+    position: relative;
+
+    width: 100%;
+    max-width: 375px;
+
+    margin: 0 auto;
+  }
+
+  .payment-section-contents__mobile > div > div img:first-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+
+    width: 57%;
+
+    border-radius: 22px;
+  }
+
+  .payment-section-contents__mobile > div > div:first-child img:last-child {
+    position: relative;
+
+    width: 100%;
+  }
+
+  .payment-section-contents__mobile > div > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: rgb(78, 89, 104);
+    text-align: center;
+  }
+
+  /* 10번째 섹션 스타일 */
+  main > section:nth-child(10) {
+    padding: 0 0 100px 0;
+  }
+
+  main > section:nth-child(10) > div:first-child {
+    justify-content: center;
+
+    width: auto;
+  }
+
+  main > section:nth-child(10) > div:first-child img {
+    width: auto;
+    height: 600px;
+
+    margin-bottom: 4px;
+  }
+
+  main > section:nth-child(10) > div:nth-child(2) h1 {
+    font-size: 36px;
+  }
+
+  main > section:nth-child(10) > div:nth-child(2) p {
+    font-size: 18px;
+  }
+
+  main > section:nth-child(10) > div:nth-child(2) p:last-child {
+    margin-bottom: 100px;
+  }
+
+  main > section:nth-child(10) > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    padding: 0 24px;
+  }
+
+  main > section:nth-child(10) > div:last-child > div {
+    width: 100%;
+  }
+
+  main > section:nth-child(10) > div:last-child > div span {
+    margin-bottom: 10px;
+
+    font-size: 26px;
+  }
+
+  main > section:nth-child(10) > div:last-child > div p {
+    font-size: 18px;
+  }
+
+  main > section:nth-child(10) > div:last-child > div a {
+    margin-top: 20px;
   }
 }
