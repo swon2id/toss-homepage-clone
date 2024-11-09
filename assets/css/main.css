@@ -337,9 +337,9 @@ main > section:nth-child(3) > div {
   color: rgb(49, 130, 246);
 }
 
-.remittance__contents__sub-div01 > div > p:first-child svg,
-.remittance__contents__sub-div02 > div > p:first-child svg,
-.remittance__contents__sub-div03 > div > p:first-child svg {
+.remittance__contents__sub-div01 > div > p:first-child object,
+.remittance__contents__sub-div02 > div > p:first-child object,
+.remittance__contents__sub-div03 > div > p:first-child object {
   width: 24px;
   min-width: 24px;
   height: 24px;
@@ -1151,6 +1151,38 @@ main > section:nth-child(10) > div:last-child > div a:hover {
   p.main-banner__mobile-desc {
     display: none;
   }
+
+  /* 4번째 섹션 스타일 */
+  .loan-contents__sub-div02__inner > div > img {
+    height: 740.531px;
+  }
+
+  .loan-contents__sub-div03
+    > p:nth-child(3):not(.loan-contents__sub-div03__mobile-text)
+    ~ p:not(.loan-contents__sub-div03__mobile-text) {
+    display: block;
+  }
+
+  .loan-contents__sub-div03__mobile-text {
+    display: none;
+  }
+
+  /* 5번째 섹션 스타일 */
+  .credit-contents__sub-div01 h2:not(.credit-contents__sub-div01__mobile-text) {
+    display: block;
+  }
+
+  .credit-contents__sub-div01__mobile-text {
+    display: none;
+  }
+
+  .credit-contents__sub-div02:not(.credit-contents__sub-div02--mobile) {
+    display: flex;
+  }
+
+  .credit-contents__sub-div02--mobile {
+    display: none;
+  }
 }
 
 @media (max-width: 639px) {
@@ -1258,5 +1290,221 @@ main > section:nth-child(10) > div:last-child > div a:hover {
 
   .home-and-consume__contents > div:last-child p {
     font-size: 17px;
+  }
+
+  /* 3번째 섹션 스타일 */
+  main > section:nth-child(3) > div {
+    padding: 100px 0;
+  }
+
+  .remittance__contents h1 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+  }
+
+  .remittance__contents h2 {
+    font-size: 28px;
+  }
+
+  .remittance__contents h2:nth-child(4) {
+    margin-bottom: 60px;
+  }
+
+  .remittance__contents__sub-div01,
+  .remittance__contents__sub-div02,
+  .remittance__contents__sub-div03 {
+    width: calc(100% + 20px);
+
+    margin-bottom: 60px;
+  }
+
+  .remittance__contents__sub-div03 {
+    margin-bottom: 0;
+  }
+
+  .remittance__contents__sub-div02 {
+    flex-wrap: wrap-reverse;
+  }
+
+  .remittance__contents__sub-div01 > *,
+  .remittance__contents__sub-div02 > *,
+  .remittance__contents__sub-div03 > * {
+    flex-basis: calc(100% - 20px);
+
+    max-width: calc(100% - 20px);
+  }
+
+  .remittance__contents__sub-div01 > div,
+  .remittance__contents__sub-div02 > div,
+  .remittance__contents__sub-div03 > div {
+    width: 375px;
+  }
+
+  .remittance__contents__sub-div01 > div > p:first-child,
+  .remittance__contents__sub-div02 > div > p:first-child,
+  .remittance__contents__sub-div03 > div > p:first-child {
+    margin-bottom: 8px;
+
+    font-size: 15px;
+  }
+
+  .remittance__contents__sub-div01 > div > p:first-child object,
+  .remittance__contents__sub-div02 > div > p:first-child object,
+  .remittance__contents__sub-div03 > div > p:first-child object {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+  }
+
+  .remittance__contents__sub-div01 > div > p:nth-child(2),
+  .remittance__contents__sub-div02 > div > p:nth-child(2),
+  .remittance__contents__sub-div03 > div > p:nth-child(2) {
+    font-size: 24px;
+  }
+
+  .remittance__contents__sub-div01 > div > p:nth-child(3),
+  .remittance__contents__sub-div02 > div > p:nth-child(3),
+  .remittance__contents__sub-div03 > div > p:nth-child(3) {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+  }
+
+  .remittance__contents__sub-div01 > div > p:nth-child(3) ~ p,
+  .remittance__contents__sub-div02 > div > p:nth-child(3) ~ p,
+  .remittance__contents__sub-div03 > div > p:nth-child(3) ~ p {
+    font-size: 15px;
+  }
+
+  /* 4번째 섹션 스타일 */
+  main > section:nth-child(4) > div {
+    padding: 100px 0;
+  }
+
+  .loan-contents__sub-div01 {
+    margin-bottom: 0;
+  }
+
+  .loan-contents__sub-div01 h1 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+  }
+
+  .loan-contents__sub-div01 h2 {
+    font-size: 28px;
+  }
+
+  .loan-contents__sub-div02 {
+    position: static;
+
+    width: 100vw;
+    margin-left: -24px;
+
+    transform: unset;
+  }
+
+  .loan-contents__sub-div02__inner {
+    display: flex;
+
+    width: 100%;
+    max-width: 375px;
+    height: calc(100% - 2px);
+
+    margin: 0 auto;
+    margin-bottom: 2px;
+  }
+
+  .loan-contents__sub-div02__inner > div > img {
+    height: 462.828px;
+  }
+
+  .loan-contents__sub-div03 > p:nth-child(1),
+  .loan-contents__sub-div03 > p:nth-child(2),
+  .loan-contents__sub-div03 > p:nth-child(3) {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .loan-contents__sub-div03 > p:nth-child(3) {
+    margin-bottom: 19px;
+  }
+
+  .loan-contents__sub-div03
+    > p:nth-child(3):not(.loan-contents__sub-div03__mobile-text)
+    ~ p:not(.loan-contents__sub-div03__mobile-text) {
+    display: none;
+  }
+
+  .loan-contents__sub-div03__mobile-text {
+    display: block;
+
+    font-size: 17px !important;
+  }
+
+  /* 5번째 섹션 스타일 */
+  main > section:nth-child(5) > div {
+    padding: 100px 0;
+  }
+
+  .credit-contents__sub-div01 {
+    margin-bottom: 60px;
+  }
+
+  .credit-contents__sub-div01 h1 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+  }
+
+  .credit-contents__sub-div01 h2 {
+    font-size: 28px;
+  }
+
+  .credit-contents__sub-div01 h2:not(.credit-contents__sub-div01__mobile-text) {
+    display: none;
+  }
+
+  .credit-contents__sub-div01__mobile-text {
+    display: block;
+
+    font-size: 28px !important;
+  }
+
+  .credit-contents__sub-div02:not(.credit-contents__sub-div02--mobile) {
+    display: none;
+  }
+
+  .credit-contents__sub-div02--mobile {
+    display: flex;
+
+    width: calc(100% + 20px);
+
+    margin: 0px -20px -20px 0px;
+  }
+
+  .credit-contents__sub-div02--mobile > div {
+    flex-basis: calc(100% - 20px);
+
+    max-width: calc(100% - 20px);
+    height: 220px;
+
+    padding: 0px;
+    margin: 0 20px 20px 0;
+  }
+
+  .credit-contents__sub-div02--mobile img {
+    width: 80px;
+
+    margin-bottom: 20px;
+  }
+
+  .credit-contents__sub-div02--mobile p:nth-child(2) {
+    font-size: 24px;
+  }
+
+  .credit-contents__sub-div02--mobile p:nth-child(2) ~ p {
+    font-size: 15px;
   }
 }
