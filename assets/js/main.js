@@ -1,15 +1,13 @@
-import HeaderHandler from "./HeaderHandler.js";
-import MainBannerHandler from "./MainBannerHandler.js";
-import CurtainAnimationHandler from "./CurtainAnimationHandler.js";
+import headerHandler from "./HeaderHandler.js";
+import mainBannerHandler from "./MainBannerHandler.js";
+import curtainAnimationHandler from "./CurtainAnimationHandler.js";
+import contentRevealer from "./ContentRevealer.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  new HeaderHandler();
-  new MainBannerHandler(
-    ".banner-skip-btn",
-    ".main-banner__desc",
-    ".banner-skip-btn g"
-  );
-  new CurtainAnimationHandler("main > section:nth-child(7)");
+  headerHandler.run();
+  mainBannerHandler.run();
+  curtainAnimationHandler.run();
+  contentRevealer.run();
 
   document.querySelectorAll("a").forEach(function (anchor) {
     anchor.addEventListener("click", function (event) {

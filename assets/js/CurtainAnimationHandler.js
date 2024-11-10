@@ -4,10 +4,9 @@ class CurtainAnimationHandler {
     this.coverLeft = this.section.querySelector(".section07-cover--left");
     this.coverRight = this.section.querySelector(".section07-cover--right");
     this.maxTranslateX = (window.innerWidth - 1040) / 2;
-    this.bindEvents();
   }
 
-  bindEvents() {
+  run() {
     window.addEventListener("scroll", () => this.onScroll());
   }
 
@@ -31,4 +30,7 @@ class CurtainAnimationHandler {
   }
 }
 
-export default CurtainAnimationHandler;
+const curtainAnimationHandler = new CurtainAnimationHandler(
+  "main > section:nth-child(7)"
+);
+export default curtainAnimationHandler;

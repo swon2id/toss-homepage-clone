@@ -8,20 +8,12 @@ class HeaderHandler {
     this.mobileMenuCloseButton = document.querySelector(
       ".header__mobile-menu-close-btn"
     );
-
-    this.addEventListeners();
-    this.init();
   }
 
-  init() {
-    if (this.header) {
-      this.checkScroll();
-    }
-  }
-
-  addEventListeners() {
+  run() {
     window.addEventListener("scroll", this.checkScroll.bind(this));
     window.addEventListener("resize", this.handleResize.bind(this));
+
     this.mobileMenuOpenButton.addEventListener("click", () => {
       this.toggleMenuButtons(
         this.mobileMenuOpenButton,
@@ -29,6 +21,7 @@ class HeaderHandler {
       );
       this.expandHeader();
     });
+
     this.mobileMenuCloseButton.addEventListener("click", () => {
       this.toggleMenuButtons(
         this.mobileMenuCloseButton,
@@ -36,6 +29,10 @@ class HeaderHandler {
       );
       this.collapseHeader();
     });
+
+    if (this.header) {
+      this.checkScroll();
+    }
   }
 
   checkScroll() {
@@ -74,4 +71,5 @@ class HeaderHandler {
   }
 }
 
-export default HeaderHandler;
+const headerHandler = new HeaderHandler();
+export default headerHandler;

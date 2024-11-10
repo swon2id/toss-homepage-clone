@@ -2,7 +2,7 @@ class MainBannerHandler {
   constructor(buttonSelector, scrollDstTargetSelector, iconGroupSelector) {
     // DOM 요소 선택
     this.button = document.querySelector(buttonSelector);
-    this.buttonInnerDiv = this.button.querySelector('div');
+    this.buttonInnerDiv = this.button.querySelector("div");
     this.scrollDstTargetSelector = document.querySelector(
       scrollDstTargetSelector
     );
@@ -17,23 +17,18 @@ class MainBannerHandler {
     this.pauseDuration = 250; // 애니메이션 재생 간격 텀 시간 (250ms)
     this.totalCycleDuration = this.movementDuration + this.pauseDuration; // 애니메이션 한 사이클 지속 시간 (3500ms)
     this.iconOriginalOpacity =
-      parseFloat(this.iconGroup.getAttribute('opacity')) || 1;
+      parseFloat(this.iconGroup.getAttribute("opacity")) || 1;
     this.iconAnimationStartTime = null;
-
-    this.addEventListeners();
-    this.init();
   }
 
-  init() {
-    if (this.iconGroup) {
-      this.buttonInnerDiv.style.transform = 'scale(0.75)';
-      requestAnimationFrame(this.animateIconGroup.bind(this));
-    }
-  }
-
-  addEventListeners() {
+  run() {
     if (this.button && this.scrollDstTargetSelector) {
-      this.button.addEventListener('click', this.handleButtonClick.bind(this));
+      this.button.addEventListener("click", this.handleButtonClick.bind(this));
+    }
+
+    if (this.iconGroup) {
+      this.buttonInnerDiv.style.transform = "scale(0.75)";
+      requestAnimationFrame(this.animateIconGroup.bind(this));
     }
   }
 
@@ -87,21 +82,21 @@ class MainBannerHandler {
       const scale = this.calculateScale(movementProgress);
 
       this.iconGroup.setAttribute(
-        'transform',
+        "transform",
         `matrix(0.3134367763996124, 0, 0, 0.3134367763996124, 11.140670776367188, ${positionY})`
       );
-      this.iconGroup.setAttribute('opacity', opacity);
+      this.iconGroup.setAttribute("opacity", opacity);
       this.buttonInnerDiv.style.transform = `scale(${scale})`;
     }
 
     // 애니메이션 한 사이클 재생 텀 처리
     else {
       this.iconGroup.setAttribute(
-        'transform',
+        "transform",
         `matrix(0.3134367763996124, 0, 0, 0.3134367763996124, 11.140670776367188, 0)`
       );
-      this.iconGroup.setAttribute('opacity', 0);
-      this.buttonInnerDiv.style.transform = 'scale(0.75)';
+      this.iconGroup.setAttribute("opacity", 0);
+      this.buttonInnerDiv.style.transform = "scale(0.75)";
     }
 
     requestAnimationFrame(this.animateIconGroup.bind(this));
@@ -164,4 +159,9 @@ class MainBannerHandler {
   }
 }
 
-export default MainBannerHandler;
+const mainBannerHandler = new MainBannerHandler(
+  ".banner-skip-btn",
+  ".main-banner__desc",
+  ".banner-skip-btn g"
+);
+export default mainBannerHandler;
