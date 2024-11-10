@@ -1002,6 +1002,13 @@ main > section:nth-child(8) > div {
   color: #333d4b;
 }
 
+.payment-section-contents > h1,
+.payment-section-contents > h2,
+.payment-section-contents__mobile > div > div:first-child,
+.payment-section-contents__mobile > div > div:last-child {
+  visibility: hidden;
+}
+
 /* 9번째 섹션 스타일 */
 main > section:nth-child(9) {
   width: 100%;
@@ -1208,6 +1215,12 @@ main > section:nth-child(10) > div:last-child > div a:hover {
   background-color: #1b64da;
 
   color: #fff;
+}
+
+main > section:nth-child(10) > div:first-child img,
+main > section:nth-child(10) > div:nth-child(2),
+main > section:nth-child(10) > div:last-child {
+  visibility: hidden;
 }
 
 @media (min-width: 640px) {
@@ -1990,5 +2003,40 @@ main > section:nth-child(6) .reveal--second {
 
 .invest-sub-section03 > div:not(:first-child).reveal--fourth {
   animation: 0.5s ease-in-out 1s 1 normal forwards running
+    animation-reveal-section;
+}
+
+.payment-section-contents .reveal--first {
+  animation: 0.5s ease-in-out 0s 1 normal forwards running
+    animation-reveal-section;
+}
+
+.payment-section-contents .reveal--second {
+  animation: 0.5s ease-in-out 0.5s 1 normal forwards running
+    animation-reveal-section;
+}
+
+.payment-section-contents .reveal--third {
+  animation: 0.5s ease-in-out 1s 1 normal forwards running
+    animation-reveal-section;
+}
+
+.payment-section-contents .reveal--fourth {
+  animation: 0.5s ease-in-out 1.5s 1 normal forwards running
+    animation-reveal-section;
+}
+
+main > section:nth-child(10) .reveal--first {
+  animation: 0.5s ease-in-out 0s 1 normal forwards running
+    animation-reveal-section;
+}
+
+main > section:nth-child(10) .reveal--second {
+  animation: 0.5s ease-in-out 0s 1 normal forwards running
+    animation-reveal-section;
+}
+
+main > section:nth-child(10) .reveal--third {
+  animation: 0.5s ease-in-out 0.5s 1 normal forwards running
     animation-reveal-section;
 }

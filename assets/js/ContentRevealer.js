@@ -76,39 +76,84 @@ class ContentRevealer {
     );
     this.isSection6Revealed = false;
 
-    this.section7Image1 = document.querySelector(
+    this.section8Image1 = document.querySelector(
       ".gallery-contents__item:nth-child(3) img"
     );
-    this.section7Image2 = document.querySelector(
+    this.section8Image2 = document.querySelector(
       ".gallery-contents__item:nth-child(4) > div:first-child img"
     );
-    this.section7Image3 = document.querySelector(
+    this.section8Image3 = document.querySelector(
       ".gallery-contents__item:nth-child(4) > div:last-child img"
     );
-    this.section7Image4 = document.querySelector(
+    this.section8Image4 = document.querySelector(
       ".gallery-contents__item:nth-child(5) img"
     );
+
+    this.section9H1 = document.querySelector(".payment-section-contents > h1");
+    this.section9H2List = document.querySelectorAll(
+      ".payment-section-contents > h2"
+    );
+    this.section9MobileImage1 = document.querySelector(
+      ".payment-section-contents__mobile > div:first-child > div:first-child"
+    );
+    this.section9MobileText1 = document.querySelector(
+      ".payment-section-contents__mobile > div:first-child > div:last-child"
+    );
+    this.section9MobileImage2 = document.querySelector(
+      ".payment-section-contents__mobile > div:last-child > div:first-child"
+    );
+    this.section9MobileText2 = document.querySelector(
+      ".payment-section-contents__mobile > div:last-child > div:last-child"
+    );
+    this.section9DesktopImage1 = document.querySelector(
+      ".payment-section-contents__image--right"
+    );
+    this.section9DesktopImage2 = document.querySelector(
+      ".payment-section-contents__image--left"
+    );
+    this.section9DesktopText1 = document.querySelector(
+      ".payment-section-contents__text--left"
+    );
+    this.section9DesktopText2 = document.querySelector(
+      ".payment-section-contents__text--right"
+    );
+    this.isSection9Revealed = false;
+
+    this.section10Image = document.querySelector(
+      "main > section:nth-child(10) > div:first-child img"
+    );
+    this.section10SecondDiv = document.querySelector(
+      "main > section:nth-child(10) > div:nth-child(2)"
+    );
+    this.section10LastDiv = document.querySelector(
+      "main > section:nth-child(10) > div:last-child"
+    );
+    this.isSection10Revealed = false;
   }
 
   run() {
     // 새로고침 대응
-    this.checkScrollYPosForSection2();
-    this.checkScrollYPosForSection3();
-    this.checkScrollYPosForSection4();
-    this.checkScrollYPosForSection5();
-    this.checkScrollYPosForSection6();
-    this.checkScrollYPosForSection7();
+    this.revealSection2Contents();
+    this.revealSection3Contents();
+    this.revealSection4Contents();
+    this.revealSection5Contents();
+    this.revealSection6Contents();
+    this.revealSection8Contents();
+    this.revealSection9Contents();
+    this.revealSection10Contents();
 
     // 이벤트 리스너 추가
-    window.addEventListener("scroll", () => this.checkScrollYPosForSection2());
-    window.addEventListener("scroll", () => this.checkScrollYPosForSection3());
-    window.addEventListener("scroll", () => this.checkScrollYPosForSection4());
-    window.addEventListener("scroll", () => this.checkScrollYPosForSection5());
-    window.addEventListener("scroll", () => this.checkScrollYPosForSection6());
-    window.addEventListener("scroll", () => this.checkScrollYPosForSection7());
+    window.addEventListener("scroll", () => this.revealSection2Contents());
+    window.addEventListener("scroll", () => this.revealSection3Contents());
+    window.addEventListener("scroll", () => this.revealSection4Contents());
+    window.addEventListener("scroll", () => this.revealSection5Contents());
+    window.addEventListener("scroll", () => this.revealSection6Contents());
+    window.addEventListener("scroll", () => this.revealSection8Contents());
+    window.addEventListener("scroll", () => this.revealSection9Contents());
+    window.addEventListener("scroll", () => this.revealSection10Contents());
   }
 
-  checkScrollYPosForSection2() {
+  revealSection2Contents() {
     if (this.isSection2Revealed) return;
 
     const topPosition = this.section2H1Element.getBoundingClientRect().top;
@@ -154,7 +199,7 @@ class ContentRevealer {
     }
   }
 
-  checkScrollYPosForSection3() {
+  revealSection3Contents() {
     if (this.isSection3Revealed) return;
 
     const topPosition = this.section3H1Element.getBoundingClientRect().top;
@@ -192,7 +237,7 @@ class ContentRevealer {
     }
   }
 
-  checkScrollYPosForSection4() {
+  revealSection4Contents() {
     if (this.isSection4Revealed) return;
 
     const topPosition = this.section4H1.getBoundingClientRect().top;
@@ -219,7 +264,7 @@ class ContentRevealer {
     }
   }
 
-  checkScrollYPosForSection5() {
+  revealSection5Contents() {
     if (this.isSection5Revealed) return;
 
     const topPosition = this.section5SubDivElement1.getBoundingClientRect().top;
@@ -239,7 +284,7 @@ class ContentRevealer {
     }
   }
 
-  checkScrollYPosForSection6() {
+  revealSection6Contents() {
     if (this.isSection6Revealed) return;
 
     const topPosition = this.section6Title.getBoundingClientRect().top;
@@ -257,12 +302,12 @@ class ContentRevealer {
     }
   }
 
-  checkScrollYPosForSection7() {
+  revealSection8Contents() {
     const elements = [
-      this.section7Image1,
-      this.section7Image2,
-      this.section7Image3,
-      this.section7Image4,
+      this.section8Image1,
+      this.section8Image2,
+      this.section8Image3,
+      this.section8Image4,
     ];
 
     elements.forEach((element) => {
@@ -281,6 +326,51 @@ class ContentRevealer {
         element.style.opacity = opacity;
       }
     });
+  }
+
+  revealSection9Contents() {
+    if (this.isSection9Revealed) return;
+
+    const topPosition = this.section9H1.getBoundingClientRect().top;
+    const bottomPosition =
+      this.section9H2List[
+        this.section9H2List.length - 1
+      ].getBoundingClientRect().bottom;
+    const triggerPosition = (topPosition + bottomPosition) / 2;
+    const windowHeight = window.innerHeight;
+
+    if (triggerPosition <= windowHeight) {
+      this.isSection9Revealed = true;
+      this.section9H1.classList.add("reveal", "reveal--first");
+      this.section9H2List.forEach((h2) => {
+        h2.classList.add("reveal", "reveal--first");
+      });
+      this.section9MobileImage1.classList.add("reveal", "reveal--second");
+      this.section9MobileText1.classList.add("reveal", "reveal--third");
+      this.section9MobileImage2.classList.add("reveal", "reveal--third");
+      this.section9MobileText2.classList.add("reveal", "reveal--fourth");
+
+      this.section9DesktopImage1.classList.add("reveal", "reveal--second");
+      this.section9DesktopText1.classList.add("reveal", "reveal--third");
+      this.section9DesktopImage2.classList.add("reveal", "reveal--third");
+      this.section9DesktopText2.classList.add("reveal", "reveal--fourth");
+    }
+  }
+
+  revealSection10Contents() {
+    if (this.isSection10Revealed) return;
+
+    const topPosition = this.section10Image.getBoundingClientRect().top;
+    const bottomPosition = this.section10Image.getBoundingClientRect().bottom;
+    const triggerPosition = (topPosition + bottomPosition) / 2;
+    const windowHeight = window.innerHeight;
+
+    if (triggerPosition <= windowHeight) {
+      this.isSection10Revealed = true;
+      this.section10Image.classList.add("reveal", "reveal--first");
+      this.section10SecondDiv.classList.add("reveal", "reveal--second");
+      this.section10LastDiv.classList.add("reveal", "reveal--third");
+    }
   }
 }
 
