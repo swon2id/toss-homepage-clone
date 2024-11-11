@@ -1223,6 +1223,20 @@ main > section:nth-child(10) > div:last-child {
   visibility: hidden;
 }
 
+@media (max-width: 1023px) {
+  main > section:nth-child(10) > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  main > section:nth-child(10) > div:last-child > div {
+    width: 100%;
+
+    margin-bottom: 80px;
+  }
+}
+
 @media (min-width: 640px) {
   /* 1번째 섹션 스타일 */
   h1.main-banner__mobile-slogun,
@@ -1915,6 +1929,8 @@ main > section:nth-child(10) > div:last-child {
 
   main > section:nth-child(10) > div:last-child > div {
     width: 100%;
+
+    margin-bottom: 0;
   }
 
   main > section:nth-child(10) > div:last-child > div span {
@@ -1929,20 +1945,6 @@ main > section:nth-child(10) > div:last-child {
 
   main > section:nth-child(10) > div:last-child > div a {
     margin-top: 20px;
-  }
-}
-
-@media (max-width: 1023px) {
-  main > section:nth-child(10) > div:last-child {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-  }
-
-  main > section:nth-child(10) > div:last-child > div {
-    width: 100%;
-
-    margin-bottom: 80px;
   }
 }
 
