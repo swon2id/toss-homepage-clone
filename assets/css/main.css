@@ -1932,6 +1932,20 @@ main > section:nth-child(10) > div:last-child {
   }
 }
 
+@media (max-width: 1023px) {
+  main > section:nth-child(10) > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  main > section:nth-child(10) > div:last-child > div {
+    width: 100%;
+
+    margin-bottom: 80px;
+  }
+}
+
 @keyframes animation-reveal-section {
   0% {
     opacity: 0;
