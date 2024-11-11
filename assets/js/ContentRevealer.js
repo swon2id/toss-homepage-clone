@@ -141,6 +141,7 @@ class ContentRevealer {
     this.revealSection8Contents();
     this.revealSection9Contents();
     this.revealSection10Contents();
+    this.swipeSection2MobileImage();
 
     // 이벤트 리스너 추가
     window.addEventListener("scroll", () => this.revealSection2Contents());
@@ -151,6 +152,10 @@ class ContentRevealer {
     window.addEventListener("scroll", () => this.revealSection8Contents());
     window.addEventListener("scroll", () => this.revealSection9Contents());
     window.addEventListener("scroll", () => this.revealSection10Contents());
+
+    // 모바일 상태 섹션 2 스와이프 효과 이벤트 리스너 추가
+    window.addEventListener("scroll", () => this.swipeSection2MobileImage());
+    window.addEventListener("resize", () => this.swipeSection2MobileImage());
   }
 
   revealSection2Contents() {
@@ -370,6 +375,44 @@ class ContentRevealer {
       this.section10Image.classList.add("reveal", "reveal--first");
       this.section10SecondDiv.classList.add("reveal", "reveal--second");
       this.section10LastDiv.classList.add("reveal", "reveal--third");
+    }
+  }
+
+  swipeSection2MobileImage() {
+    const section2MobileImage = document.querySelector(
+      ".home-and-consume__contents > div:nth-child(5)"
+    );
+    if (window.innerWidth <= 639) {
+      const startX = 0;
+      const endX = -650;
+      const startY = 0;
+      const endY = 100;
+
+      const rect = section2MobileImage.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const startScroll = window.scrollY + rect.bottom;
+      const endScroll = startScroll + rect.height / 3;
+
+      if (
+        window.scrollY + windowHeight >= startScroll &&
+        window.scrollY + windowHeight <= endScroll
+      ) {
+        const progress =
+          (window.scrollY + windowHeight - startScroll) /
+          (endScroll - startScroll);
+
+        const currentX = startX + (endX - startX) * progress;
+        const currentY = startY + (endY - startY) * progress;
+
+        section2MobileImage.style.transform = `translate3d(calc(${currentX}px + ${currentY}vw), 0px, 0px)`;
+      } else if (window.scrollY + windowHeight < startScroll) {
+        section2MobileImage.style.transform = `translate3d(calc(${startX}px + ${startY}vw), 0px, 0px)`;
+      } else if (window.scrollY + windowHeight > endScroll) {
+        section2MobileImage.style.transform = `translate3d(calc(${endX}px + ${endY}vw), 0px, 0px)`;
+      }
+    } else {
+      section2MobileImage.style.transform = "";
     }
   }
 }
